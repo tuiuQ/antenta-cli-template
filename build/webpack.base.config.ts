@@ -1,9 +1,8 @@
 import { resolve } from 'path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import { VueLoaderPlugin } from 'vue-loader'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import webpack from 'webpack'
+import webpack, { Configuration } from 'webpack'
 
 const commonCssLoader = [
 	MiniCssExtractPlugin.loader,
@@ -20,7 +19,6 @@ const commonCssLoader = [
 ]
 
 export default {
-	mode: 'development',
 	entry: './src/index.ts',
 	output: {
 		filename: '[name].js',
@@ -88,7 +86,6 @@ export default {
 		]
 	},
 	plugins: [
-		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
 			title: 'antenta-cli',
 			template: './public/index.html'
@@ -105,4 +102,4 @@ export default {
 	devServer: {
 		port: 3000
 	}
-}
+} as Configuration
