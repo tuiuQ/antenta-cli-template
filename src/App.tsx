@@ -1,16 +1,14 @@
 import { defineComponent } from 'vue'
 import "./index.less"
 
-import taylorSwift from './assets/images/taylor-swift-1.jpg'
-
 export default defineComponent({
-  name: 'demo',
+  name: 'App',
   setup() {
-    const title = "demo"
+    const title = "app"
     return () => {
       return (
         <div >
-          <h1 class="title">{title} components working!!!</h1>
+          <h1 class="title">{{name}}{title} components working!!!</h1>
         </div>
       )
     }
