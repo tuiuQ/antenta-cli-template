@@ -1,6 +1,6 @@
-import { ConfigEnv } from "../typings/types";
+import { ConfigEnv } from "../src/types/types";
 
 export default {
   NODE_ENV: 'development',
-  baseURL: 'http://locahost:3000'
+  baseURL: 'http://localhost:3000'
 } as ConfigEnv

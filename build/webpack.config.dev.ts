@@ -1,6 +1,8 @@
 import { Configuration } from "webpack";
 import config from '../config'
 
+process.env.TZ
+
 export default {
   mode: 'development',
   devServer: {

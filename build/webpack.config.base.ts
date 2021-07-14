@@ -1,4 +1,4 @@
-import { Configuration, RuleSetUseItem } from 'webpack'
+import { Configuration, RuleSetUseItem, DefinePlugin } from 'webpack'
 import { resolve } from 'path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import { VueLoaderPlugin } from 'vue-loader'
@@ -43,7 +43,7 @@ export default {
         use: commonCssLoader
       },
       {
-        test: /\.tsx$/,
+        test: /\.(tsx|ts)$/,
         use: [
           'babel-loader',
           {
@@ -86,6 +86,10 @@ export default {
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].css'
+    }),
+    new DefinePlugin({
+      "__VUE_OPTIONS_API__": true,
+      "__VUE_PROD_DEVTOOLS__": false
     })
   ],
 } as Configuration

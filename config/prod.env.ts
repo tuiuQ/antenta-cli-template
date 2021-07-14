@@ -1,4 +1,4 @@
-import { ConfigEnv } from "../typings/types";
+import { ConfigEnv } from "../src/types/types";
 
 export default {
   NODE_ENV: 'production',

@@ -1,9 +1,13 @@
+import prod from './prod.env'
+import dev from './dev.env'
+
 export default {
+  NODE_ENV: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   build: {
-    env: require('./prod.env')
+    env: prod
   },
   dev: {
-    env: require('./dev.env'),
-    port: 3000
+    env: dev,
+    port: 8080
   }
 }
