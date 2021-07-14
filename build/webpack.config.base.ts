@@ -54,6 +54,28 @@ export default {
             }
           }
         ]
+      },
+      {
+        test: /\.html$/,
+        loader: 'html-loader'
+      },
+      {
+        test: /\.(jpg|png|gif)$/,
+        loader: 'url-loader',
+        options: {
+          name: '[hash:10].[ext]',
+          esModules: false,
+          limit: 8 * 1024,
+          outputPath: 'static/image'
+        }
+      },
+      {
+        exclude: /\.(vue|js|css|tsx|ts|html|jpg|png|gif)/,
+        loader: 'file-loader',
+        options: {
+          name: '[hash:10].[ext]',
+          outputPath: 'static/meida'
+        }
       }
     ]
   },
