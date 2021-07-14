@@ -24,6 +24,9 @@ export default {
     filename: '[name].js',
     path: resolve(__dirname, '../dist')
   },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.vue', '.js']
+  },
   module: {
     rules: [
       {
@@ -38,6 +41,19 @@ export default {
       {
         test: /\.css$/,
         use: commonCssLoader
+      },
+      {
+        test: /\.tsx$/,
+        use: [
+          'babel-loader',
+          {
+            loader: 'ts-loader',
+            options: {
+              transpileOnly: true,
+              appendTsSuffixTo: [/\.vue$/]
+            }
+          }
+        ]
       }
     ]
   },
