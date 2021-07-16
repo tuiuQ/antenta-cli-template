@@ -1,6 +1,6 @@
 import { defineComponent, Ref, ref } from 'vue'
 import { http } from './http'
-import { Banner, power } from './types/data-types'
+import { Banner } from './types/data-types'
 
 export default defineComponent({
   name: 'App',
