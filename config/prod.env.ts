@@ -1,4 +1,4 @@
-import { ConfigEnv } from "../src/types/types";
+import { ConfigEnv } from "./index";
 
 export default {
   NODE_ENV: 'production',
